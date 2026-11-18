@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私密教学 - 成长知识视频平台 - 陪伴每一次提问</title>
+<meta name="description" content="私密教学官方网站，专注成长知识视频内容的企业级平台，汇聚专业创作者，提供高清原创教学与陪伴式社区内容生态。">
+<style>
+:root{
+  --bg:#f6f5f2;
+  --ink:#1f2430;
+  --ink-2:#4c5462;
+  --ink-3:#7b8494;
+  --line:#e3e0da;
+  --card:#ffffff;
+  --brand:#3b4fa8;
+  --brand-2:#6c7fd8;
+  --accent:#e8a13a;
+  --soft:#eef0fb;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(31,36,48,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{scroll-margin-top:118px}
+
+/* sticky header group */
+.sticky-top{position:sticky;top:0;z-index:80}
+.announce{
+  background:linear-gradient(90deg,#2f3a7c,#3b4fa8 45%,#5b6fc8);
+  color:#fff;font-size:13.5px;
+}
+.announce .wrap{
+  display:flex;align-items:center;gap:12px;padding:9px 22px;flex-wrap:wrap;
+}
+.announce .tag{
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  padding:1px 9px;border-radius:20px;font-size:12px;letter-spacing:.04em;white-space:nowrap;
+}
+.announce p{flex:1;min-width:200px;opacity:.95;font-size:13px}
+.announce .an-link{white-space:nowrap;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:1px}
+
+header.site{
+  background:rgba(246,245,242,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;gap:26px;padding:14px 22px;max-width:1180px;margin:0 auto;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.02em}
+.logo .mark{
+  width:36px;height:36px;border-radius:11px;
+  background:conic-gradient(from 200deg,var(--brand),var(--brand-2),var(--accent),var(--brand));
+  display:grid;place-items:center;color:#fff;font-size:15px;font-weight:900;
+  box-shadow:0 6px 16px rgba(59,79,168,.32);
+}
+.logo small{display:block;font-size:10.5px;font-weight:500;color:var(--ink-3);letter-spacing:.16em}
+nav.links{display:flex;gap:4px;margin-left:10px;flex:1;flex-wrap:wrap}
+nav.links a{
+  padding:7px 12px;border-radius:10px;font-size:14.5px;color:var(--ink-2);transition:.2s;
+}
+nav.links a:hover{background:var(--soft);color:var(--brand)}
+.nav-tools{display:flex;align-items:center;gap:10px}
+.search{position:relative}
+.search input{
+  width:212px;padding:9px 36px 9px 14px;border-radius:12px;border:1px solid var(--line);
+  background:#fff;font-size:13.5px;outline:none;transition:.2s;
+}
+.search input:focus{border-color:var(--brand-2);box-shadow:0 0 0 3px rgba(108,127,216,.15);width:238px}
+.search .ico{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:14px}
+.search-hint{
+  position:absolute;top:46px;left:0;right:0;background:#fff;border:1px solid var(--line);
+  border-radius:12px;box-shadow:var(--shadow);padding:8px;font-size:13px;display:none;z-index:60;
+}
+.search-hint.show{display:block}
+.search-hint div{padding:6px 9px;border-radius:8px;color:var(--ink-2);cursor:pointer}
+.search-hint div:hover{background:var(--soft);color:var(--brand)}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:12px;
+  font-size:14px;font-weight:600;transition:.22s;
+}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(59,79,168,.28)}
+.btn-primary:hover{background:#33459a;transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--line);background:#fff;color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--brand-2);color:var(--brand)}
+.btn-amber{background:var(--accent);color:#3a2a08;box-shadow:0 6px 16px rgba(232,161,58,.3)}
+.btn-amber:hover{transform:translateY(-1px)}
+.menu-toggle{display:none;font-size:22px;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:#fff}
+
+/* hero */
+.hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.hero:before{
+  content:"";position:absolute;right:-160px;top:-120px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(108,127,216,.22),transparent 65%);pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.12em;
+  color:var(--brand);background:var(--soft);padding:5px 13px;border-radius:30px;font-weight:600;
+}
+.hero h1{font-size:44px;line-height:1.2;letter-spacing:-.01em;margin:18px 0 14px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--brand);position:relative}
+.hero h1 em:after{
+  content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:rgba(232,161,58,.35);z-index:-1;border-radius:4px;
+}
+.hero-lead{color:var(--ink-2);font-size:15.5px;max-width:520px}
+.hero-lead p+p{margin-top:10px}
+.hero-cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap}
+.hero-stats .num{font-size:26px;font-weight:900;color:var(--brand);letter-spacing:-.02em}
+.hero-stats .lbl{font-size:12.5px;color:var(--ink-3);letter-spacing:.04em}
+.hero-visual{position:relative}
+.hero-visual .frame{
+  border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(31,36,48,.16);
+  border:6px solid #fff;transform:rotate(-1.2deg);
+}
+.hero-visual .mini{
+  position:absolute;bottom:-18px;left:-16px;background:#fff;border-radius:16px;
+  box-shadow:var(--shadow);padding:12px 16px;display:flex;align-items:center;gap:11px;
+}
+.hero-visual .mini .dot{width:9px;height:9px;border-radius:50%;background:#3bb273;box-shadow:0 0 0 4px rgba(59,178,115,.18)}
+.hero-visual .mini span{font-size:12.5px;color:var(--ink-2)}
+
+/* generic section */
+.sec{padding:52px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.sec-head h2{font-size:29px;font-weight:900;letter-spacing:-.01em}
+.sec-head h2 span{color:var(--brand)}
+.sec-head p{color:var(--ink-3);font-size:14px;max-width:520px}
+.sec-head .more{font-size:13.5px;color:var(--brand);font-weight:600;white-space:nowrap}
+.sec-head .more:hover{text-decoration:underline}
+
+/* video cards */
+.vcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vcard{
+  background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  transition:.28s;display:flex;flex-direction:column;
+}
+.vcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#d3d9f3}
+.cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#dde}
+.cover img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.vcard:hover .cover img{transform:scale(1.05)}
+.cover .lab{
+  position:absolute;top:10px;left:10px;background:rgba(15,20,35,.72);color:#fff;
+  font-size:11.5px;padding:3px 10px;border-radius:20px;backdrop-filter:blur(4px);letter-spacing:.03em;
+}
+.cover .dur{
+  position:absolute;bottom:10px;right:10px;background:rgba(15,20,35,.72);color:#fff;
+  font-size:11.5px;padding:2px 8px;border-radius:6px;
+}
+.cover .play{
+  position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:.3s;
+}
+.cover .play i{
+  width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.86);
+  display:grid;place-items:center;color:var(--brand);font-size:19px;padding-left:4px;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.vcard:hover .cover .play{opacity:1}
+.vbody{padding:15px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.vbody h3{font-size:15.5px;line-height:1.5;font-weight:700}
+.vbody .desc{font-size:13px;color:var(--ink-3);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vmeta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-3);margin-top:auto;padding-top:6px}
+.avx{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:11px;color:#fff;font-weight:700;flex:none}
+.vtags{display:flex;gap:6px;flex-wrap:wrap}
+.vtags span{font-size:11.5px;color:var(--brand);background:var(--soft);padding:2px 9px;border-radius:20px}
+.vactions{display:flex;gap:6px;padding-top:6px;border-top:1px dashed var(--line);margin-top:6px}
+.vactions button{
+  font-size:12px;color:var(--ink-3);padding:5px 9px;border-radius:8px;display:inline-flex;gap:4px;align-items:center;transition:.2s;
+}
+.vactions button:hover{background:var(--soft);color:var(--brand)}
+.vactions button.on{color:var(--brand);font-weight:700}
+.vactions button.fav.on{color:#e2607a}
+.vactions .sp{margin-left:auto}
+
+/* feature two big */
+.feat{display:grid;grid-template-columns:1.25fr .95fr;gap:22px}
+.fbig{position:relative;border-radius:var(--radius);overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;box-shadow:var(--shadow)}
+.fbig:before{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(10,14,28,.82));
+}
+.fbig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.fbig .in{padding:26px;position:relative;z-index:2}
+.fbig .in .lab{display:inline-block;background:var(--accent);color:#3a2a08;font-size:11.5px;font-weight:700;padding:3px 11px;border-radius:20px;margin-bottom:12px}
+.fbig h3{font-size:23px;line-height:1.35;font-weight:800}
+.fbig p{font-size:13.5px;opacity:.85;margin-top:9px;max-width:480px}
+.fbig .mt{display:flex;gap:16px;margin-top:14px;font-size:12.5px;opacity:.8}
+.fcol{display:grid;gap:16px}
+.fmini{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px;transition:.24s}
+.fmini:hover{transform:translateX(4px);border-color:#d3d9f3;box-shadow:var(--shadow)}
+.fmini img{width:128px;height:80px;object-fit:cover;border-radius:10px;flex:none}
+.fmini .t{font-size:14px;font-weight:700;line-height:1.45}
+.fmini .s{font-size:12px;color:var(--ink-3);margin-top:5px}
+
+/* topics */
+.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.topic{
+  border-radius:var(--radius);padding:22px;background:#fff;border:1px solid var(--line);
+  transition:.26s;position:relative;overflow:hidden;
+}
+.topic:after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:var(--soft);opacity:.7}
+.topic:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d3d9f3}
+.topic .st{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--brand);display:inline-flex;align-items:center;gap:6px}
+.topic .st i{width:7px;height:7px;border-radius:50%;background:#3bb273;box-shadow:0 0 0 3px rgba(59,178,115,.18);font-style:normal}
+.topic h3{font-size:17px;margin:11px 0 8px;font-weight:800;line-height:1.45;position:relative;z-index:2}
+.topic p{font-size:13px;color:var(--ink-3);position:relative;z-index:2}
+.topic .cnt{margin-top:14px;font-size:12px;color:var(--brand);font-weight:600;position:relative;z-index:2}
+
+/* creators */
+.creators{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.creator{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;transition:.26s;
+}
+.creator:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d3d9f3}
+.creator .avatar{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;
+  font-size:24px;font-weight:900;color:#fff;box-shadow:0 8px 20px rgba(31,36,48,.16);
+}
+.creator h3{font-size:15.5px;font-weight:800}
+.creator .fld{font-size:12px;color:var(--brand);background:var(--soft);display:inline-block;padding:2px 10px;border-radius:20px;margin:7px 0 9px}
+.creator p{font-size:12.5px;color:var(--ink-3);line-height:1.6;min-height:60px}
+.creator .nums{display:flex;justify-content:center;gap:16px;font-size:12px;color:var(--ink-3);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.creator .nums b{color:var(--ink);font-size:13px;display:block}
+
+/* story */
+.story{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.st-card{background:#fff;border-radius:var(--radius);border:1px solid var(--line);padding:24px;position:relative}
+.st-card .q{font-size:38px;color:var(--soft);font-weight:900;line-height:1;position:absolute;top:12px;right:18px;font-family:Georgia,serif}
+.st-card h3{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:10px}
+.st-card p{font-size:13px;color:var(--ink-2);line-height:1.75}
+.st-card .au{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:12.5px;color:var(--ink-3)}
+
+/* evaluation */
+.voices{columns:2;column-gap:20px}
+.voice{
+  break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:18px;
+}
+.voice p{font-size:13.5px;color:var(--ink-2);line-height:1.75}
+.voice .who{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12px;color:var(--ink-3)}
+.voice .stars{color:var(--accent);font-size:12px;letter-spacing:1px}
+
+/* inspiration */
+.insp{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.ins-box{background:linear-gradient(135deg,#2f3a7c,#3b4fa8 55%,#6c7fd8);border-radius:var(--radius);padding:30px;color:#fff;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.ins-box:after{content:"";position:absolute;right:-70px;bottom:-70px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.ins-box h3{font-size:23px;font-weight:900;line-height:1.4}
+.ins-box p{font-size:13.5px;opacity:.88;margin:11px 0 20px;max-width:420px}
+.ins-box .row{display:flex;gap:10px;flex-wrap:wrap}
+.ins-list{display:grid;gap:14px}
+.ins-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:.24s}
+.ins-item:hover{border-color:#d3d9f3;box-shadow:var(--shadow)}
+.ins-item .k{font-size:11.5px;color:var(--brand);font-weight:700;letter-spacing:.08em}
+.ins-item h4{font-size:14.5px;font-weight:700;margin:6px 0 5px}
+.ins-item p{font-size:12.5px;color:var(--ink-3)}
+
+/* faq */
+.faq{max-width:860px;margin:0 auto;display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;transition:.2s}
+details[open]{border-color:#cdd5f5;box-shadow:0 8px 22px rgba(31,36,48,.06)}
+summary{
+  cursor:pointer;font-size:14.5px;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:19px;color:var(--brand);font-weight:400;transition:.2s}
+details[open] summary:after{content:"–"}
+details p{font-size:13.5px;color:var(--ink-2);padding:0 0 15px;line-height:1.8}
+
+/* video-wall */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.wall figure{position:relative;border-radius:14px;overflow:hidden;background:#dde;cursor:pointer}
+.wall figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.wall figure:nth-child(4){grid-column:span 2}
+.wall figure:nth-child(6){grid-column:span 2}
+.wall img{width:100%;height:100%;object-fit:cover;transition:.4s;aspect-ratio:16/9}
+.wall figure:nth-child(1) img,.wall figure:nth-child(4) img,.wall figure:nth-child(6) img{aspect-ratio:16/8}
+.wall figure:hover img{transform:scale(1.06)}
+.wall figcaption{
+  position:absolute;inset:auto 0 0 0;padding:20px 14px 10px;color:#fff;font-size:12.5px;font-weight:600;
+  background:linear-gradient(transparent,rgba(10,14,28,.82));
+}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.news article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;transition:.24s;display:flex;flex-direction:column}
+.news article:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d3d9f3}
+.news .date{font-size:11.5px;color:var(--ink-3);letter-spacing:.06em}
+.news h3{font-size:14.5px;font-weight:800;margin:9px 0 7px;line-height:1.5}
+.news p{font-size:12.5px;color:var(--ink-3);line-height:1.7}
+.news .k{margin-top:auto;padding-top:12px;font-size:12px;color:var(--brand);font-weight:600}
+
+/* partners */
+.partners{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.partner{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 26px;
+  font-size:14px;font-weight:700;color:var(--ink-2);letter-spacing:.02em;transition:.22s;
+}
+.partner:hover{border-color:var(--brand-2);color:var(--brand);transform:translateY(-3px)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact-card h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.contact-card p{font-size:13.5px;color:var(--ink-3);margin-bottom:18px}
+.field{display:grid;gap:12px}
+.field input,.field textarea{
+  width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:11px;font-size:13.5px;outline:none;background:#fbfbfa;
+}
+.field input:focus,.field textarea:focus{border-color:var(--brand-2);box-shadow:0 0 0 3px rgba(108,127,216,.14);background:#fff}
+.field textarea{min-height:96px;resize:vertical}
+.info-list{display:grid;gap:14px;margin-top:6px}
+.info-list .it{display:flex;gap:13px;align-items:flex-start}
+.info-list .ic{width:38px;height:38px;border-radius:11px;background:var(--soft);display:grid;place-items:center;color:var(--brand);font-size:16px;flex:none}
+.info-list .it b{display:block;font-size:13.5px}
+.info-list .it span{font-size:12.5px;color:var(--ink-3)}
+
+/* footer */
+footer.site{background:#1f2430;color:#c9cdd8;margin-top:56px;padding:52px 0 26px;font-size:13.5px}
+footer.site .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
+footer.site h4{color:#fff;font-size:14.5px;margin-bottom:14px;font-weight:800}
+footer.site .about p{font-size:13px;line-height:1.8;color:#9aa0af;margin-top:12px;max-width:320px}
+footer.site ul{list-style:none;display:grid;gap:9px}
+footer.site ul a{color:#9aa0af;transition:.2s;font-size:13px}
+footer.site ul a:hover{color:#fff}
+.fbot{border-top:1px solid #333a49;margin-top:38px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#868d9d}
+.fbot .beian{display:flex;gap:16px;flex-wrap:wrap}
+
+/* toast & modal */
+.toast{
+  position:fixed;left:50%;bottom:38px;transform:translate(-50%,20px);background:#1f2430;color:#fff;
+  padding:11px 22px;border-radius:12px;font-size:13.5px;opacity:0;pointer-events:none;transition:.32s;z-index:200;box-shadow:0 14px 40px rgba(0,0,0,.3);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal-mask{
+  position:fixed;inset:0;background:rgba(15,20,35,.55);backdrop-filter:blur(3px);
+  display:none;place-items:center;z-index:150;padding:22px;
+}
+.modal-mask.show{display:grid}
+.modal{
+  background:#fff;border-radius:20px;max-width:520px;width:100%;padding:28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+.modal h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.modal p{font-size:13.5px;color:var(--ink-2);line-height:1.75;margin-bottom:16px}
+.modal .close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--ink-2);font-size:16px;display:grid;place-items:center}
+.modal .share-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.modal .share-row button{border:1px solid var(--line);border-radius:12px;padding:13px 6px;font-size:13px;display:grid;gap:5px;justify-items:center;transition:.2s}
+.modal .share-row button:hover{border-color:var(--brand-2);color:var(--brand);background:var(--soft)}
+.modal .link-row{display:flex;gap:8px}
+.modal .link-row input{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:12.5px;background:#fbfbfa;outline:none}
+
+#toTop{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+  background:var(--brand);color:#fff;display:grid;place-items:center;font-size:18px;
+  box-shadow:0 10px 26px rgba(59,79,168,.4);opacity:0;pointer-events:none;transition:.3s;z-index:90;
+}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:#33459a;transform:translateY(-3px)}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero h1{font-size:34px}
+  .vcards,.topics,.creators,.news,.story{grid-template-columns:repeat(2,1fr)}
+  .feat{grid-template-columns:1fr}
+  .voices{columns:1}
+  .insp{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+  .wall{grid-template-columns:repeat(2,1fr)}
+  .wall figure:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .wall figure:nth-child(4),.wall figure:nth-child(6){grid-column:span 1}
+}
+@media(max-width:760px){
+  nav.links{
+    display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);
+    padding:10px 16px;flex-direction:column;gap:2px;box-shadow:0 14px 30px rgba(0,0,0,.08);z-index:70;
+  }
+  nav.links.open{display:flex}
+  nav.links a{padding:10px 12px}
+  .menu-toggle{display:block}
+  .nav{position:relative;flex-wrap:wrap;gap:12px}
+  .search input{width:150px}
+  .search input:focus{width:170px}
+  .vcards,.topics,.creators,.news,.story{grid-template-columns:1fr}
+  .hero h1{font-size:29px}
+  .hero-stats{gap:22px}
+  .sec-head h2{font-size:23px}
+  .wall{grid-template-columns:1fr}
+  .wall figure:nth-child(1){grid-column:span 1}
+  footer.site .cols{grid-template-columns:1fr}
+  .announce .wrap{padding:8px 16px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="announce">
+    <div class="wrap">
+      <span class="tag">官方发布</span>
+      <p>「私密教学」第七季专题《提问的勇气》今日上线，新增 18 课时精品内容，投稿通道同步开启。</p>
+      <a class="an-link" href="#news">查看更新详情 →</a>
+    </div>
+  </div>
+  <header class="site">
+    <div class="nav">
+      <a class="logo" href="#top">
+        <span class="mark">私</span>
+        <span>私密教学<small>SI MI TEACHING</small></span>
+      </a>
+      <nav class="links" id="navLinks">
+        <a href="#top">首页</a>
+        <a href="#focus">焦点内容</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#story">成长随笔</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="nav-tools">
+        <div class="search">
+          <input type="search" id="searchInput" placeholder="搜索课程 / 创作者 / 专题" aria-label="站内搜索">
+          <span class="ico">⌕</span>
+          <div class="search-hint" id="searchHint"></div>
+        </div>
+        <a class="btn btn-primary" href="#contact">投稿入口</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="展开导航">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">官方网站 · 成长知识视频平台</span>
+        <h1>私密教学：认真对待<em>每一次提问</em></h1>
+        <div class="hero-lead">
+          <p>「私密教学」是一家持续运营的成长知识视频品牌，我们相信真正有价值的学习，始于一个被认真对待的问题。平台深耕个人成长、实用技能与情感认知等垂直领域，汇聚专业创作者，以高清原创的影像内容，把复杂的知识拆成可以落地的步骤。</p>
+          <p>作为企业级内容生态的搭建者，我们坚持用户至上的产品理念，用匠心打磨每一节课程，用陪伴回应每一段成长。这里有系统的教程、真实的访谈、温暖的记录，也有一个愿意倾听的社区。</p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#focus">探索焦点内容</a>
+          <a class="btn btn-ghost" href="#creators">认识创作者</a>
+          <button class="btn btn-amber" data-share>分享本站</button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num" data-count="1260">0</div><div class="lbl">精品课程 / 节</div></div>
+          <div><div class="num" data-count="268">0</div><div class="lbl">签约创作者 / 位</div></div>
+          <div><div class="num" data-count="94">0</div><div class="lbl">用户口碑满意度 / %</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame">
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='0' y1='0' x2='1' y2='1'&gt;&lt;stop offset='0' stop-color='%232f3a7c'/&gt;&lt;stop offset='.55' stop-color='%233b4fa8'/&gt;&lt;stop offset='1' stop-color='%236c7fd8'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='640' height='400' fill='url(%23g)'/&gt;&lt;circle cx='520' cy='80' r='120' fill='%23ffffff' opacity='.08'/&gt;&lt;circle cx='120' cy='330' r='150' fill='%23e8a13a' opacity='.16'/&gt;&lt;rect x='80' y='96' width='330' height='196' rx='18' fill='%23ffffff' opacity='.14'/&gt;&lt;rect x='104' y='126' width='200' height='14' rx='7' fill='%23ffffff' opacity='.55'/&gt;&lt;rect x='104' y='154' width='280' height='10' rx='5' fill='%23ffffff' opacity='.3'/&gt;&lt;rect x='104' y='176' width='240' height='10' rx='5' fill='%23ffffff' opacity='.3'/&gt;&lt;circle cx='470' cy='250' r='52' fill='%23ffffff' opacity='.9'/&gt;&lt;path d='M456 224 L500 250 L456 276 Z' fill='%233b4fa8'/&gt;&lt;text x='104' y='252' fill='%23ffffff' font-family='sans-serif' font-size='24' font-weight='bold'&gt;私密教学 · 第七季&lt;/text&gt;&lt;/svg&gt;" alt="私密教学第七季专题主视觉：请教与回答的知识场景">
+        </div>
+        <div class="mini"><span class="dot"></span><span>本周新增 46 节精品内容</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section class="sec" id="focus">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>焦点内容 <span>· 值得认真看完的影像</span></h2>
+          <p>我们从近期的原创作品中挑出两个重点专题与四节精品课，覆盖学习方法、情绪认知与关系沟通，适合反复观看与记录。</p>
+        </div>
+        <a class="more" href="#wall">全部影像 →</a>
+      </div>
+      <div class="feat">
+        <div class="fbig">
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 460'&gt;&lt;defs&gt;&lt;linearGradient id='a' x1='0' y1='0' x2='1' y2='1'&gt;&lt;stop offset='0' stop-color='%231f2a55'/&gt;&lt;stop offset='1' stop-color='%234a5fb0'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='720' height='460' fill='url(%23a)'/&gt;&lt;g opacity='.5'&gt;&lt;circle cx='600' cy='90' r='140' fill='%23e8a13a' opacity='.25'/&gt;&lt;circle cx='100' cy='400' r='160' fill='%236c7fd8' opacity='.3'/&gt;&lt;/g&gt;&lt;rect x='70' y='84' width='300' height='230' rx='16' fill='%23ffffff' opacity='.12'/&gt;&lt;rect x='96' y='116' width='180' height='13' rx='6' fill='%23ffffff' opacity='.6'/&gt;&lt;rect x='96' y='144' width='246' height='9' rx='4' fill='%23ffffff' opacity='.28'/&gt;&lt;rect x='96' y='164' width='210' height='9' rx='4' fill='%23ffffff' opacity='.28'/&gt;&lt;rect x='96' y='184' width='230' height='9' rx='4' fill='%23ffffff' opacity='.28'/&gt;&lt;text x='70' y='372' fill='%23ffffff' font-family='sans-serif' font-size='30' font-weight='bold'&gt;提问的勇气&lt;/text&gt;&lt;text x='70' y='406' fill='%23ffffff' opacity='.7' font-family='sans-serif' font-size='16'&gt;第七季主专题 · 18 课时&lt;/text&gt;&lt;circle cx='590' cy='320' r='54' fill='%23ffffff' opacity='.92'/&gt;&lt;path d='M576 294 L620 320 L576 346 Z' fill='%233b4fa8'/&gt;&lt;/svg&gt;" alt="专题封面：提问的勇气，私密教学第七季主专题">
+          <div class="in">
+            <span class="lab">主专题 · 官方发布</span>
+            <h3>提问的勇气：把不敢开口的问题，讲成可以练习的能力</h3>
+            <p>18 课时系统内容，从课堂提问到职场沟通，从关系表达到自我追问。跟拍六位不同年龄的普通人，记录他们如何跨过“怕问错”的那道坎。</p>
+            <div class="mt"><span>18 课时</span><span>本周更新</span><span>高清原创</span></div>
+          </div>
+        </div>
+        <div class="fcol">
+          <a class="fmini" href="#wall">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'&gt;&lt;rect width='320' height='200' fill='%23eae3d4'/&gt;&lt;rect x='0' y='130' width='320' height='70' fill='%23d8c8a8'/&gt;&lt;circle cx='80' cy='70' r='34' fill='%23e8a13a' opacity='.85'/&gt;&lt;path d='M150 130 L190 60 L230 130 Z' fill='%23b07b4a' opacity='.8'/&gt;&lt;rect x='230' y='92' width='62' height='38' rx='6' fill='%23ffffff' opacity='.7'/&gt;&lt;/svg&gt;" alt="课程封面：一堂被拆成二十步的笔记方法">
+            <div><div class="t">把一本书读成二十步：可复用的笔记方法</div><div class="s">学习方法 · 32 分钟 · 沈知微</div></div>
+          </a>
+          <a class="fmini" href="#wall">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'&gt;&lt;rect width='320' height='200' fill='%23222c3c'/&gt;&lt;circle cx='240' cy='58' r='40' fill='%236c7fd8' opacity='.55'/&gt;&lt;rect x='36' y='118' width='248' height='12' rx='6' fill='%23ffffff' opacity='.2'/&gt;&lt;rect x='36' y='146' width='176' height='12' rx='6' fill='%23ffffff' opacity='.14'/&gt;&lt;text x='36' y='86' fill='%23ffffff' font-family='sans-serif' font-size='20' font-weight='bold'&gt;情绪温度计&lt;/text&gt;&lt;/svg&gt;" alt="课程封面：情绪温度计，三分钟自我状态记录">
+            <div><div class="t">情绪温度计：三分钟记录你的当下状态</div><div class="s">情绪认知 · 18 分钟 · 陈一默</div></div>
+          </a>
+          <a class="fmini" href="#wall">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'&gt;&lt;rect width='320' height='200' fill='%23dfe9e1'/&gt;&lt;rect x='40' y='40' width='120' height='120' rx='14' fill='%23ffffff' opacity='.85'/&gt;&lt;path d='M60 130 L92 92 L112 112 L140 68' stroke='%233b7d5a' stroke-width='7' fill='none' stroke-linecap='round'/&gt;&lt;circle cx='240' cy='100' r='46' fill='%233b7d5a' opacity='.25'/&gt;&lt;/svg&gt;" alt="课程封面：把年度目标拆成一周可执行的动作">
+            <div><div class="t">别做年度计划：把目标拆成一周的动作</div><div class="s">实用技巧 · 26 分钟 · 林允之</div></div>
+          </a>
+          <a class="fmini" href="#wall">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'&gt;&lt;rect width='320' height='200' fill='%23f3d9d4'/&gt;&lt;circle cx='90' cy='100' r='52' fill='%23c46a63' opacity='.8'/&gt;&lt;circle cx='210' cy='100' r='52' fill='%23e0a49c' opacity='.9'/&gt;&lt;rect x='112' y='86' width='66' height='28' rx='14' fill='%23ffffff' opacity='.85'/&gt;&lt;/svg&gt;" alt="课程封面：亲密关系里的三种沉默与开口练习">
+            <div><div class="t">沉默不是金：关系里的三种开口练习</div><div class="s">情感故事 · 41 分钟 · 苏晚</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO FLOW -->
+  <section class="sec" id="flow" style="background:#fbfaf7">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>精品内容流 <span>· 本周持续更新</span></h2>
+          <p>六节新上线的原创课程，涵盖表达、观察、生活整理与职场日常。每一节都配有可下载的练习单，欢迎边看边做。</p>
+        </div>
+        <a class="more" href="#news">查看更新日志 →</a>
+      </div>
+      <div class="vcards" id="videoGrid">
+
+        <article class="vcard">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;defs&gt;&lt;linearGradient id='v1' x1='0' y1='0' x2='1' y2='1'&gt;&lt;stop offset='0' stop-color='%233b4fa8'/&gt;&lt;stop offset='1' stop-color='%23a7b4ec'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='400' height='225' fill='url(%23v1)'/&gt;&lt;circle cx='330' cy='50' r='70' fill='%23ffffff' opacity='.12'/&gt;&lt;rect x='40' y='140' width='160' height='12' rx='6' fill='%23ffffff' opacity='.7'/&gt;&lt;rect x='40' y='164' width='104' height='10' rx='5' fill='%23ffffff' opacity='.4'/&gt;&lt;text x='40' y='96' fill='%23ffffff' font-family='sans-serif' font-size='26' font-weight='bold'&gt;课堂提问&lt;/text&gt;&lt;/svg&gt;" alt="视频封面：课堂里举手提问的学生被认真回应的瞬间">
+            <span class="lab">学习方法</span><span class="dur">28:14</span>
+            <span class="play"><i>▶</i></span>
+          </div>
+          <div class="vbody">
+            <h3>第一次举手之前：如何组织一个清楚的问题</h3>
+            <p class="desc">从背景、尝试、卡点三段式开始，讲师现场示范如何把模糊的困惑改写成可回答的问题。</p>
+            <div class="vtags"><span>沟通</span><span>入门</span></div>
+            <div class="vmeta"><span class="avx" style="background:#3b4fa8">沈</span>沈知微 · 4.2 万次学习</div>
+            <div class="vactions">
+              <button class="like" data-n="4218">♡ <em>4218</em></button>
+              <button class="fav">☆ 收藏</button>
+              <button class="cmt sp" data-title="第一次举手之前：如何组织一个清楚的问题">✎ 评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23f0dfc6'/&gt;&lt;rect x='0' y='150' width='400' height='75' fill='%23dbbf98'/&gt;&lt;circle cx='92' cy='86' r='46' fill='%23e8a13a'/&gt;&lt;path d='M170 150 L216 58 L262 150 Z' fill='%23a9763f' opacity='.85'/&gt;&lt;rect x='280' y='96' width='80' height='54' rx='8' fill='%23ffffff' opacity='.85'/&gt;&lt;text x='30' y='210' fill='%235a3f1d' font-family='sans-serif' font-size='18' font-weight='bold'&gt;厨房里的耐心&lt;/text&gt;&lt;/svg&gt;" alt="视频封面：厨房里一锅慢炖的汤与耐心等待的画面">
+            <span class="lab">生活方式</span><span class="dur">22:40</span>
+            <span class="play"><i>▶</i></span>
+          </div>
+          <div class="vbody">
+            <h3>慢炖两小时：把等待也当成一道工序</h3>
+            <p class="desc">一次关于耐心的小实验。在厨房里记录火候、气味与时间的流逝，聊聊为什么慢下来反而更快。</p>
+            <div class="vtags"><span>美食烹饪</span><span>治愈</span></div>
+            <div class="vmeta"><span class="avx" style="background:#c98326">苏</span>苏晚 · 3.6 万次学习</div>
+            <div class="vactions">
+              <button class="like" data-n="3105">♡ <em>3105</em></button>
+              <button class="fav">☆ 收藏</button>
+              <button class="cmt sp" data-title="慢炖两小时：把等待也当成一道工序">✎ 评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23212b3a'/&gt;&lt;circle cx='300' cy='64' r='90' fill='%236c7fd8' opacity='.35'/&gt;&lt;g stroke='%23ffffff' stroke-opacity='.6' stroke-width='4' fill='none'&gt;&lt;path d='M40 170 L100 110 L150 150 L210 80 L270 130'/&gt;&lt;/g&gt;&lt;circle cx='210' cy='80' r='9' fill='%23e8a13a'/&gt;&lt;text x='40' y='62' fill='%23ffffff' font-family='sans-serif' font-size='22' font-weight='bold'&gt;情绪曲线&lt;/text&gt;&lt;/svg&gt;" alt="视频封面：情绪曲线折线图与深夜书桌的灯光">
+            <span class="lab">情绪认知</span><span class="dur">35:02</span>
+            <span class="play"><i>▶</i></span>
+          </div>
+          <div class="vbody">
+            <h3>情绪不是敌人：一次完整的自我对话练习</h3>
+            <p class="desc">把愤怒、委屈和疲惫分别写下来，再一条条回应。讲师示范如何在十分钟内完成一次自我对话。</p>
+            <div class="vtags"><span>心理</span><span>练习单</span></div>
+            <div class="vmeta"><span class="avx" style="background:#39456b">陈</span>陈一默 · 5.1 万次学习</div>
+            <div class="vactions">
+              <button class="like" data-n="5231">♡ <em>5231</em></button>
+              <button class="fav">☆ 收藏</button>
+              <button class="cmt sp" data-title="情绪不是敌人：一次完整的自我对话练习">✎ 评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23e6edf2'/&gt;&lt;rect x='30' y='30' width='150' height='165' rx='10' fill='%23ffffff'/&gt;&lt;rect x='200' y='30' width='170' height='70' rx='10' fill='%23c6d5e2'/&gt;&lt;rect x='200' y='115' width='170' height='80' rx='10' fill='%239fb6c9'/&gt;&lt;circle cx='105' cy='80' r='24' fill='%233b4fa8' opacity='.5'/&gt;&lt;rect x='55' y='126' width='100' height='9' rx='4' fill='%23b9c6d2'/&gt;&lt;rect x='55' y='146' width='80' height='9' rx='4' fill='%23b9c6d2'/&gt;&lt;/svg&gt;" alt="视频封面：桌面整理前后的对比与收纳盒布局">
+            <span class="lab">家居收纳</span><span class="dur">19:55</span>
+            <span class="play"><i>▶</i></span>
+          </div>
+          <div class="vbody">
+            <h3>桌面只有三样东西：断舍离的四个提问</h3>
+            <p class="desc">不做极端的清理，只用四个问题判断每件物品的去留。本期还附带一份可打印的收纳清单。</p>
+            <div class="vtags"><span>整理</span><span>实用技巧</span></div>
+            <div class="vmeta"><span class="avx" style="background:#3b7d5a">林</span>林允之 · 2.9 万次学习</div>
+            <div class="vactions">
+              <button class="like" data-n="2640">♡ <em>2640</em></button>
+              <button class="fav">☆ 收藏</button>
+              <button class="cmt sp" data-title="桌面只有三样东西：断舍离的四个提问">✎ 评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23ecd9df'/&gt;&lt;circle cx='120' cy='108' r='60' fill='%23c46a63' opacity='.75'/&gt;&lt;circle cx='250' cy='108' r='60' fill='%23e0a49c'/&gt;&lt;rect x='168' y='96' width='34' height='24' rx='12' fill='%23ffffff' opacity='.9'/&gt;&lt;text x='30' y='205' fill='%23743f3a' font-family='sans-serif' font-size='17' font-weight='bold'&gt;两个人的沟通&lt;/text&gt;&lt;/svg&gt;" alt="视频封面：两个人的剪影在沟通中的距离变化">
+            <span class="lab">情感故事</span><span class="dur">44:10</span>
+            <span class="play"><i>▶</i></span>
+          </div>
+          <div class="vbody">
+            <h3>我们为什么总在同一个地方吵架</h3>
+            <p class="desc">一对结婚八年的伴侣，现场复盘三次重复的争执。讲师带他们找到那句从未说出口的话。</p>
+            <div class="vtags"><span>访谈</span><span>关系</span></div>
+            <div class="vmeta"><span class="avx" style="background:#b25a55">顾</span>顾长生 · 6.4 万次学习</div>
+            <div class="vactions">
+              <button class="like" data-n="6480">♡ <em>6480</em></button>
+              <button class="fav">☆ 收藏</button>
+              <button class="cmt sp" data-title="我们为什么总在同一个地方吵架">✎ 评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;defs&gt;&lt;linearGradient id='v6' x1='0' y1='0' x2='0' y2='1'&gt;&lt;stop offset='0' stop-color='%232c3b33'/&gt;&lt;stop offset='1' stop-color='%235f8a6d'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='400' height='225' fill='url(%23v6)'/&gt;&lt;path d='M0 170 Q100 120 200 160 T400 150 L400 225 L0 225 Z' fill='%23243a2c' opacity='.8'/&gt;&lt;rect x='40' y='52' width='130' height='10' rx='5' fill='%23ffffff' opacity='.6'/&gt;&lt;rect x='40' y='76' width='90' height='9' rx='4' fill='%23ffffff' opacity='.35'/&gt;&lt;circle cx='320' cy='70' r='38' fill='%23e8a13a' opacity='.7'/&gt;&lt;/svg&gt;" alt="视频封面：清晨山路徒步与背包客的剪影">
+            <span class="lab">户外活动</span><span class="dur">31:08</span>
+            <span class="play"><i>▶</i></span>
+          </div>
+          <div class="vbody">
+            <h3>走到山顶再回答：一次徒步里的自我提问</h3>
+            <p class="desc">凌晨四点半出发，沿着石阶一路向上，在六个休息点回答六个问题。关于坚持，也关于放弃。</p>
+            <div class="vtags"><span>健康运动</span><span>记录</span></div>
+            <div class="vmeta"><span class="avx" style="background:#3f6b52">程</span>程也 · 3.3 万次学习</div>
+            <div class="vactions">
+              <button class="like" data-n="2894">♡ <em>2894</em></button>
+              <button class="fav">☆ 收藏</button>
+              <button class="cmt sp" data-title="走到山顶再回答：一次徒步里的自我提问">✎ 评论</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="sec" id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>专题企划 <span>· 长期深耕的内容系列</span></h2>
+          <p>比起追热点，我们更愿意做长线。三个正在更新的专题，每个季度都会带来新的课程与真实访谈。</p>
+        </div>
+        <a class="more" href="#news">专题更新节奏 →</a>
+      </div>
+      <div class="topics">
+        <a class="topic" href="#wall">
+          <span class="st"><i></i>更新中</span>
+          <h3>提问的勇气 · 第七季</h3>
+          <p>从课堂到职场，从亲密关系到与自己的对话，记录普通人如何练习开口。已上线 18 课时，配套练习单可下载。</p>
+          <div class="cnt">18 课时 · 本周新增 3 节</div>
+        </a>
+        <a class="topic" href="#wall">
+          <span class="st"><i></i>更新中</span>
+          <h3>被看见的日常 · 生活影像计划</h3>
+          <p>不拍摄宏大叙事，只记录做饭、通勤、整理桌面这些微小动作。邀请 40 位普通用户共同参与拍摄。</p>
+          <div class="cnt">24 支短片 · 投稿开放中</div>
+        </a>
+        <a class="topic" href="#wall">
+          <span class="st"><i></i>更新中</span>
+          <h3>沉默的技术 · 关系沟通季</h3>
+          <p>由心理咨询师与纪录片团队共同制作，拆解沉默、回避、指责背后的真实需求，每集附沟通练习。</p>
+          <div class="cnt">12 集 · 已完结 8 集</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATORS -->
+  <section class="sec" id="creators" style="background:#fbfaf7">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>创作者矩阵 <span>· 专业且真实的讲述者</span></h2>
+          <p>他们的共同点是：愿意把知识讲清楚，也愿意承认自己仍在学习。点击头像可以查看创作者的简介与代表作。</p>
+        </div>
+        <a class="more" href="#contact">申请成为创作者 →</a>
+      </div>
+      <div class="creators">
+
+        <div class="creator">
+          <div class="avatar" style="background:linear-gradient(135deg,#3b4fa8,#6c7fd8)" data-creator="沈知微|学习方法与笔记体系|主讲「提问的勇气」主专题，前教育机构课程研发，擅长把抽象方法拆成可执行步骤。" role="button" tabindex="0">沈</div>
+          <h3>沈知微</h3>
+          <div class="fld">学习方法</div>
+          <p>相信好问题比好答案更重要，八年来专注学习方法的可视化表达。</p>
+          <div class="nums"><span><b>126</b>作品</span><span><b>18.6万</b>粉丝</span></div>
+        </div>
+
+        <div class="creator">
+          <div class="avatar" style="background:linear-gradient(135deg,#39456b,#7a86a8)" data-creator="陈一默|情绪认知与自我对话|心理咨询方向创作者，习惯用十分钟的短片讲清一个情绪概念，风格克制、不煽情。" role="button" tabindex="0">陈</div>
+          <h3>陈一默</h3>
+          <div class="fld">情绪认知</div>
+          <p>不提供答案，只提供看清自己的工具，坚持每期附一份练习单。</p>
+          <div class="nums"><span><b>89</b>作品</span><span><b>22.4万</b>粉丝</span></div>
+        </div>
+
+        <div class="creator">
+          <div class="avatar" style="background:linear-gradient(135deg,#b25a55,#e0a49c)" data-creator="苏晚|关系沟通与生活记录|擅长长镜头与生活化叙事，作品多在家中厨房拍摄，强调“日常就是教材”。" role="button" tabindex="0">苏</div>
+          <h3>苏晚</h3>
+          <div class="fld">情感故事</div>
+          <p>在厨房和客厅里谈论关系，让抽象的情绪落到具体的饭菜上。</p>
+          <div class="nums"><span><b>74</b>作品</span><span><b>15.2万</b>粉丝</span></div>
+        </div>
+
+        <div class="creator">
+          <div class="avatar" style="background:linear-gradient(135deg,#3f6b52,#8ab79b)" data-creator="程也|户外活动与身体感知|前户外俱乐部领队，主张“身体先于头脑”，用徒步与骑行记录自我提问的过程。" role="button" tabindex="0">程</div>
+          <h3>程也</h3>
+          <div class="fld">户外活动</div>
+          <p>把课堂搬到山路上，认为很多问题需要在走路时才能想明白。</p>
+          <div class="nums"><span><b>58</b>作品</span><span><b>11.8万</b>粉丝</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="sec" id="story">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>成长随笔 <span>· 来自编辑与用户的手写记录</span></h2>
+          <p>影像之外，我们也保留文字。这里的每一篇都来自真实的观看与练习，欢迎投稿。</p>
+        </div>
+      </div>
+      <div class="story">
+        <article class="st-card">
+          <span class="q">”</span>
+          <h3>看完那节提问课，我在会议室里第一次说了“我没听懂”</h3>
+          <p>会后有同事私下跟我说，其实他也没听懂。那一刻我才意识到，沉默是会传染的，而开口同样会。</p>
+          <div class="au"><span class="avx" style="background:#3b4fa8">周</span>周予 · 用户投稿</div>
+        </article>
+        <article class="st-card">
+          <span class="q">”</span>
+          <h3>关于慢炖那一期，我们收到了 300 多条厨房留言</h3>
+          <p>有人说自己第一次完整地做了一道菜，有人把火关小之后，顺便把烦心事也想通了。这些留言比视频本身更好看。</p>
+          <div class="au"><span class="avx" style="background:#c98326">编</span>私密教学编辑部</div>
+        </article>
+        <article class="st-card">
+          <span class="q">”</span>
+          <h3>拍摄「情绪温度计」的第七天，摄影师也填了一份表</h3>
+          <p>那天我们连拍了十四个小时，收工时所有人都在沉默。后来我们把那份表贴在了墙上，第二天重新开始。</p>
+          <div class="au"><span class="avx" style="background:#39456b">顾</span>顾长生 · 创作幕后</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section class="sec" id="voices" style="background:#fbfaf7">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>用户的声音 <span>· 口碑来自真实的练习</span></h2>
+          <p>这些评价来自社区、课程留言与线下活动的反馈，我们希望保留它们的完整语气。</p>
+        </div>
+      </div>
+      <div class="voices">
+        <div class="voice">
+          <p>作为一个不太会表达的人，这里的内容没有逼我变成外向的人，而是教我怎么把想说的话说完整。这一点我很感激。</p>
+          <div class="who"><span class="stars">★★★★★</span> 林间 · 学习方法课程学员</div>
+        </div>
+        <div class="voice">
+          <p>视频节奏很舒服，没有那种刻意煽情的配乐。讲师会停下来等你把笔记写完，这个细节让我觉得被尊重。</p>
+          <div class="who"><span class="stars">★★★★★</span> 阿朔 · 连续学习 26 周</div>
+        </div>
+        <div class="voice">
+          <p>投稿的短片被选进「被看见的日常」那一刻，真的有点想哭。原来我的普通一天也值得被记录。</p>
+          <div class="who"><span class="stars">★★★★★</span> 小满 · 社区创作者</div>
+        </div>
+        <div class="voice">
+          <p>唯一的小建议是希望多出一些适合通勤时听的纯音频版本，画面很好看，但有时候只想闭眼听。</p>
+          <div class="who"><span class="stars">★★★★☆</span> 迟野 · 用户反馈</div>
+        </div>
+        <div class="voice">
+          <p>和孩子一起看了那节关于“提问”的课，他问我为什么大人也会怕问错。我们聊了很久，这是意外的收获。</p>
+          <div class="who"><span class="stars">★★★★★</span> 宋女士 · 亲子成长方向用户</div>
+        </div>
+        <div class="voice">
+          <p>内容很扎实，但有些课程的练习单需要下载后打印，希望能出一个可以在手机上直接填写的版本。</p>
+          <div class="who"><span class="stars">★★★★☆</span> 顾行 · 产品建议</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSPIRATION + WALL -->
+  <section class="sec" id="wall">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>创作灵感 <span>· 与影像墙</span></h2>
+          <p>我们为投稿者准备了一些选题与脚本思路，也随机展示社区近期的影像作品。灵感不必宏大，从一个问题开始就好。</p>
+        </div>
+        <a class="more" href="#contact">提交你的作品 →</a>
+      </div>
+      <div class="insp">
+        <div class="ins-box">
+          <h3>写不出脚本？从你最想问的一个问题开始</h3>
+          <p>不必先想结构，先把你最近反复想到的那个问题写下来。我们整理了 12 个可以立刻开拍的选题方向，以及三种适合新手的开场方式。</p>
+          <div class="row">
+            <button class="btn btn-amber" data-modal="inspire">领取选题清单</button>
+            <button class="btn btn-ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.35)" data-modal="submit">了解投稿规则</button>
+          </div>
+        </div>
+        <div class="ins-list">
+          <div class="ins-item">
+            <div class="k">选题建议 · 01</div>
+            <h4>记录一次你没能开口的场景</h4>
+            <p>不需要重现当时的画面，用声音和物品也能讲清楚。时长控制在 3 分钟以内更容易被完整看完。</p>
+          </div>
+          <div class="ins-item">
+            <div class="k">标题思路 · 02</div>
+            <h4>用“我原本以为……后来发现”做开场</h4>
+            <p>这种句式自带叙事张力，也更容易让观众在第一句话就明白你要讲什么。</p>
+          </div>
+          <div class="ins-item">
+            <div class="k">剪辑思路 · 03</div>
+            <h4>把停顿留下来，不要全部剪掉</h4>
+            <p>真实的思考需要时间，两秒的沉默往往比配乐更能传递情绪。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wall" style="margin-top:26px">
+        <figure>
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'&gt;&lt;defs&gt;&lt;linearGradient id='w1' x1='0' y1='0' x2='1' y2='1'&gt;&lt;stop offset='0' stop-color='%232a3560'/&gt;&lt;stop offset='1' stop-color='%235a6fc4'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='800' height='400' fill='url(%23w1)'/&gt;&lt;circle cx='650' cy='90' r='120' fill='%23e8a13a' opacity='.2'/&gt;&lt;rect x='70' y='120' width='320' height='170' rx='14' fill='%23ffffff' opacity='.12'/&gt;&lt;path d='M110 250 L170 190 L220 230 L280 160 L340 210' stroke='%23ffffff' stroke-opacity='.6' stroke-width='6' fill='none'/&gt;&lt;text x='70' y='90' fill='%23ffffff' font-family='sans-serif' font-size='26' font-weight='bold'&gt;一次完整的自我对话&lt;/text&gt;&lt;/svg&gt;" alt="影像墙作品：深夜书桌旁记录情绪曲线的画面">
+          <figcaption>一次完整的自我对话 · 陈一默</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23eee2cc'/&gt;&lt;circle cx='100' cy='90' r='44' fill='%23e8a13a' opacity='.85'/&gt;&lt;rect x='0' y='160' width='400' height='65' fill='%23d3b98f'/&gt;&lt;rect x='230' y='120' width='110' height='46' rx='8' fill='%23ffffff' opacity='.8'/&gt;&lt;/svg&gt;" alt="影像墙作品：清晨厨房里的一碗热汤">
+          <figcaption>清晨五点的一碗汤 · 苏晚</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23dce8e0'/&gt;&lt;path d='M0 170 Q100 110 200 150 T400 130 L400 225 L0 225Z' fill='%233f6b52' opacity='.7'/&gt;&lt;circle cx='310' cy='60' r='34' fill='%23ffffff' opacity='.7'/&gt;&lt;/svg&gt;" alt="影像墙作品：山脊线与徒步者的背影">
+          <figcaption>走到山顶再回答 · 程也</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'&gt;&lt;rect width='800' height='400' fill='%23e9eef5'/&gt;&lt;rect x='60' y='60' width='300' height='280' rx='16' fill='%23ffffff'/&gt;&lt;rect x='400' y='60' width='340' height='120' rx='16' fill='%23a9bcd0'/&gt;&lt;rect x='400' y='200' width='340' height='140' rx='16' fill='%23798ea6'/&gt;&lt;circle cx='210' cy='160' r='52' fill='%233b4fa8' opacity='.4'/&gt;&lt;text x='96' y='300' fill='%234c5462' font-family='sans-serif' font-size='20'&gt;桌面整理前后&lt;/text&gt;&lt;/svg&gt;" alt="影像墙作品：整理前后的书桌对比">
+          <figcaption>桌面只有三样东西 · 林允之</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'&gt;&lt;rect width='400' height='225' fill='%23222b3c'/&gt;&lt;circle cx='130' cy='110' r='50' fill='%23e0a49c' opacity='.7'/&gt;&lt;circle cx='260' cy='110' r='50' fill='%23c46a63' opacity='.8'/&gt;&lt;rect x='178' y='100' width='34' height='20' rx='10' fill='%23ffffff' opacity='.85'/&gt;&lt;/svg&gt;" alt="影像墙作品：两个人对坐沟通的剪影">
+          <figcaption>我们为什么总在同一个地方吵架 · 顾长生</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'&gt;&lt;rect width='800' height='400' fill='%23f0e6d6'/&gt;&lt;rect x='80' y='80' width='280' height='240' rx='14' fill='%23ffffff' opacity='.7'/&gt;&lt;g stroke='%23b07b4a' stroke-width='6' fill='none'&gt;&lt;path d='M120 240 L200 160 L280 220'/&gt;&lt;/g&gt;&lt;circle cx='600' cy='200' r='90' fill='%23e8a13a' opacity='.35'/&gt;&lt;text x='80' y='360' fill='%235a3f1d' font-family='sans-serif' font-size='22'&gt;笔记方法实录&lt;/text&gt;&lt;/svg&gt;" alt="影像墙作品：手写笔记页面与折线标注">
+          <figcaption>把一本书读成二十步 · 沈知微</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="sec" id="news" style="background:#fbfaf7">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>企业动态 <span>· 官方发布与更新日志</span></h2>
+          <p>关于平台运营、专题上线与社区活动的公开信息，我们会在这里持续同步。</p>
+        </div>
+      </div>
+      <div class="news">
+        <article>
+          <div class="date">2024 · 12 · 18</div>
+          <h3>第七季主专题《提问的勇气》正式上线</h3>
+          <p>共 18 课时，配套 9 份练习单。首周开放全部课程与创作者访谈的完整版。</p>
+          <div class="k">官方发布</div>
+        </article>
+        <article>
+          <div class="date">2024 · 12 · 12</div>
+          <h3>「被看见的日常」第二期投稿通道开启</h3>
+          <p>面向所有注册用户，接受 1 至 10 分钟的原创短片，本期主题为“我的通勤一小时”。</p>
+          <div class="k">投稿 · 报名</div>
+        </article>
+        <article>
+          <div class="date">2024 · 12 · 05</div>
+          <h3>平台上线课程练习单下载与打印排版</h3>
+          <p>所有学习方法与情绪认知类课程均提供可下载的练习材料，支持 A4 排版直接打印。</p>
+          <div class="k">产品更新</div>
+        </article>
+        <article>
+          <div class="date">2024 · 11 · 28</div>
+          <h3>与三家心理教育机构达成内容合作</h3>
+          <p>未来一年将共同制作关系沟通与青少年成长方向的系列内容，保持专业的审校流程。</p>
+          <div class="k">合作 · 品牌</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head" style="justify-content:center;text-align:center">
+        <div>
+          <h2>常见问题 <span>· 帮助中心</span></h2>
+          <p style="margin:0 auto">关于学习、投稿与账号的常见疑问，如果没有找到答案，欢迎通过页面底部的联系方式与我们沟通。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>课程需要按顺序学习吗？</summary>
+          <p>不需要。我们的课程按主题与难度分层，你可以从任意一节开始。不过对于「提问的勇气」这类有递进关系的专题，我们建议按章节顺序观看，配套练习单会有更好的效果。</p>
+        </details>
+        <details>
+          <summary>练习单在哪里下载？</summary>
+          <p>在每节课程详情页的右侧工具区即可找到下载入口。学习方法与情绪认知方向的课程均提供 PDF 与可打印排版两种格式，部分课程还提供可直接在手机上填写的版本。</p>
+        </details>
+        <details>
+          <summary>如何申请成为平台创作者？</summary>
+          <p>点击导航中的投稿入口或页面底部的联系表单，填写你的方向、代表作品链接与更新计划。我们会在七个工作日内回复，通过后会安排一次线上沟通，确认内容方向与排期。</p>
+        </details>
+        <details>
+          <summary>投稿的内容会经过审核吗？</summary>
+          <p>会。所有公开内容都需要经过内容与版权审核，重点确认原创性、信息准确性与表达是否尊重他人。审核标准公开透明，未通过时会说明具体原因并给出修改建议。</p>
+        </details>
+        <details>
+          <summary>是否支持在多个设备上继续学习？</summary>
+          <p>支持。登录同一账号后，学习进度与收藏会在设备之间同步。我们也为通勤场景准备了纯音频模式，方便你在不方便看屏幕时继续收听。</p>
+        </details>
+        <details>
+          <summary>平台会举办线下活动吗？</summary>
+          <p>会。每个季度我们会围绕当季专题举办一次小规模线下观影与讨论活动，报名信息会在企业动态中公布。活动名额有限，优先面向社区活跃用户与投稿者。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact" style="background:#fbfaf7">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>联系与投稿 <span>· 我们愿意听你说</span></h2>
+          <p>无论是内容建议、合作意向还是投稿申请，填写下面的表单都可以直接送达编辑团队。</p>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-card">
+          <h3>给我们留言</h3>
+          <p>工作日 24 小时内回复，投稿类申请七个工作日内给出结果。</p>
+          <form class="field" id="contactForm">
+            <input type="text" placeholder="你的称呼" required>
+            <input type="email" placeholder="联系邮箱" required>
+            <textarea placeholder="想说的话 / 投稿方向 / 合作意向"></textarea>
+            <button class="btn btn-primary" type="submit" style="justify-content:center">提交信息</button>
+          </form>
+        </div>
+        <div class="contact-card">
+          <h3>其他联系方式</h3>
+          <p>也可以直接通过这些渠道找到我们。</p>
+          <div class="info-list">
+            <div class="it"><span class="ic">✉</span><div><b>内容合作</b><span>partner@simiteaching.example</span></div></div>
+            <div class="it"><span class="ic">✎</span><div><b>投稿咨询</b><span>submit@simiteaching.example</span></div></div>
+            <div class="it"><span class="ic">☎</span><div><b>企业服务</b><span>400-000-0000（工作日 10:00-18:00）</span></div></div>
+            <div class="it"><span class="ic">◎</span><div><b>办公地址</b><span>创意园区 B 座 7 层 · 内容制作中心</span></div></div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">
+            <button class="btn btn-ghost" data-share>分享本页</button>
+            <button class="btn btn-ghost" data-modal="submit">投稿须知</button>
+            <button class="btn btn-ghost" data-modal="report">反馈问题</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <div class="logo" style="color:#fff">
+          <span class="mark">私</span>
+          <span>私密教学<small style="color:#868d9d">SI MI TEACHING</small></span>
+        </div>
+        <p>私密教学官方网站，专注成长知识视频内容的企业级平台。我们持续运营原创课程与真实访谈，与创作者共同搭建高品质内容生态，陪伴每一次提问与成长。</p>
+        <p style="margin-top:10px">官方网站 · 持续运营中</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#focus">焦点内容</a></li>
+          <li><a href="#topics">专题企划</a></li>
+          <li><a href="#flow">精品内容流</a></li>
+          <li><a href="#wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#creators">创作者矩阵</a></li>
+          <li><a href="#story">成长随笔</a></li>
+          <li><a href="#voices">用户的声音</a></li>
+          <li><a href="#contact">投稿入口</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#news">企业动态</a></li>
+          <li><a href="#faq">帮助中心</a></li>
+          <li><a href="#contact">联系方式</a></li>
+          <li><a href="#top">返回首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2024 私密教学 官方网站 · 版权所有 · 内容均经原创与版权审核</span>
+      <div class="beian">
+        <span>备案号占位</span>
+        <span>网络文化经营许可占位</span>
+        <span>隐私条款</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal-mask" id="modalMask">
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  /* mobile nav */
+  var toggle = document.getElementById('menuToggle');
+  var navLinks = document.getElementById('navLinks');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      navLinks.classList.toggle('open');
+      toggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navLinks.classList.remove('open');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+  /* toast */
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+  }
+
+  /* search */
+  var input = document.getElementById('searchInput');
+  var hint = document.getElementById('searchHint');
+  var pool = ['提问的勇气 第七季','情绪温度计 练习','笔记方法 二十步','被看见的日常 投稿','慢炖两小时 厨房','关系沟通季 沉默','徒步与自我提问','桌面整理 四个提问'];
+  function renderHint(kw){
+    var list = pool.filter(function(s){ return s.indexOf(kw) > -1; });
+    if(!kw){ list = pool.slice(0,5); }
+    if(!list.length){
+      hint.innerHTML = '<div style="color:#7b8494">暂无匹配结果，试试「提问」「情绪」「投稿」</div>';
+    }else{
+      hint.innerHTML = list.slice(0,6).map(function(s){ return '<div data-k="'+s+'">'+s+'</div>'; }).join('');
+      hint.querySelectorAll('div[data-k]').forEach(function(d){
+        d.addEventListener('click', function(){
+          input.value = d.dataset.k;
+          hint.classList.remove('show');
+          showToast('已定位到相关内容：' + d.dataset.k);
+          var target = document.getElementById('flow');
+          if(target){ target.scrollIntoView({behavior:'smooth'}); }
+        });
+      });
+    }
+    hint.classList.add('show');
+  }
+  if(input){
+    input.addEventListener('focus', function(){ renderHint(input.value.trim()); });
+    input.addEventListener('input', function(){ renderHint(input.value.trim()); });
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        renderHint(input.value.trim());
+        showToast(input.value.trim() ? '正在为你查找：' + input.value.trim() : '请输入关键词');
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.search')){ hint.classList.remove('show'); }
+    });
+  }
+
+  /* like / fav */
+  document.querySelectorAll('.like').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var em = btn.querySelector('em');
+      var n = parseInt(btn.dataset.n, 10);
+      if(btn.classList.contains('on')){
+        btn.classList.remove('on');
+        n -= 1;
+        em.textContent = n;
+        btn.firstChild.nodeValue = '♡ ';
+      }else{
+        btn.classList.add('on');
+        n += 1;
+        em.textContent = n;
+        btn.firstChild.nodeValue = '♥ ';
+      }
+      btn.dataset.n = n;
+    });
+  });
+  document.querySelectorAll('.fav').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btn.classList.toggle('on');
+      var on = btn.classList.contains('on');
+      btn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      showToast(on ? '已加入收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* modal */
+  var mask = document.getElementById('modalMask');
+  var box = document.getElementById('modalBox');
+  function openModal(html){
+    box.innerHTML = html;
+    mask.classList.add('show');
+    bindModal();
+  }
+  function closeModal(){
+    mask.classList.remove('show');
+  }
+  function bindModal(){
+    var c = box.querySelector('.close');
+    if(c){ c.addEventListener('click', closeModal); }
+    var cp = box.querySelector('[data-copy]');
+    if(cp){
+      cp.addEventListener('click', function(){
+        var val = cp.dataset.copy;
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(val).then(function(){ showToast('链接已复制'); }, function(){ showToast('复制失败，请手动选择'); });
+        }else{
+          showToast('当前环境不支持自动复制');
+        }
+      });
+    }
+    var sb = box.querySelectorAll('[data-share-to]');
+    sb.forEach(function(b){
+      b.addEventListener('click', function(){
+        showToast('已生成分享卡片：' + b.dataset.shareTo);
+      });
+    });
+  }
+  mask.addEventListener('click', function(e){ if(e.target === mask){ closeModal(); } });
+
+  document.querySelectorAll('[data-share]').forEach(function(b){
+    b.addEventListener('click', function(){
+      openModal(
+        '<button class="close" aria-label="关闭">✕</button>' +
+        '<h3>分享「私密教学」</h3>' +
+        '<p>把值得认真看完的内容，分享给也想认真成长的一个人。</p>' +
+        '<div class="share-row">' +
+          '<button data-share-to="微信">微信</button>' +
+          '<button data-share-to="微博">微博</button>' +
+          '<button data-share-to="QQ">QQ</button>' +
+        '</div>' +
+        '<div class="link-row">' +
+          '<input readonly value="https://simiteaching.example/focus" aria-label="分享链接">' +
+          '<button class="btn btn-primary" data-copy="https://simiteaching.example/focus">复制</button>' +
+        '</div>'
+      );
+    });
+  });
+
+  document.querySelectorAll('[data-modal]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var type = b.dataset.modal;
+      if(type === 'submit'){
+        openModal(
+          '<button class="close" aria-label="关闭">✕</button>' +
+          '<h3>投稿须知</h3>' +
+          '<p>我们接受 1 至 10 分钟的原创短片与图文记录。请确保内容为本人原创，涉及他人出镜需取得同意。投稿后七个工作日内回复，通过后会安排线上沟通确认排期。</p>' +
+          '<p style="color:#7b8494">小提示：先用一句话写清你最想回答的问题，脚本会自然成形。</p>' +
+          '<button class="btn btn-amber" style="width:100%;justify-content:center" data-share-to="投稿材料">提交投稿意向</button>'
+        );
+      }else if(type === 'report'){
+        openModal(
+          '<button class="close" aria-label="关闭">✕</button>' +
+          '<h3>反馈问题</h3>' +
+          '<p>如果遇到播放异常、内容错误或版权问题，请描述具体页面与情况，我们会在两个工作日内跟进处理。</p>' +
+          '<div class="field"><textarea placeholder="请描述你遇到的问题"></textarea>' +
+          '<button class="btn btn-primary" style="justify-content:center" data-share-to="反馈已提交">提交反馈</button></div>'
+        );
+      }else if(type === 'inspire'){
+        openModal(
+          '<button class="close" aria-label="关闭">✕</button>' +
+          '<h3>12 个可立刻开拍的选题</h3>' +
+          '<p>① 记录一次你没能开口的场景　② 你最近反复想到的一个问题　③ 一件保留了五年以上的旧物　④ 通勤路上观察到的三个细节</p>' +
+          '<p style="color:#7b8494">完整的 12 个选题与三种开场方式，可在投稿页面领取。</p>' +
+          '<button class="btn btn-amber" style="width:100%;justify-content:center" data-share-to="选题清单">领取完整清单</button>'
+        );
+      }
+    });
+  });
+
+  /* comment buttons */
+  document.querySelectorAll('.cmt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = btn.dataset.title || '本节课程';
+      openModal(
+        '<button class="close" aria-label="关闭">✕</button>' +
+        '<h3>评论 · ' + t + '</h3>' +
+        '<p>留下你的练习心得，或是一个还没想明白的问题。我们不追求短评，只看重真实的反馈。</p>' +
+        '<div class="field"><textarea placeholder="写下你的想法…"></textarea>' +
+        '<button class="btn btn-primary" style="justify-content:center" data-share-to="评论已发布">发布评论</button></div>'
+      );
+    });
+  });
+
+  /* creator info */
+  document.querySelectorAll('[data-creator]').forEach(function(el){
+    function open(){
+      var parts = el.dataset.creator.split('|');
+      openModal(
+        '<button class="close" aria-label="关闭">✕</button>' +
+        '<h3>' + parts[0] + ' · ' + parts[1] + '</h3>' +
+        '<p>' + parts[2] + '</p>' +
+        '<p style="color:#7b8494">长期在平台更新原创内容，课程与练习单均可在内容页查看。</p>' +
+        '<button class="btn btn-primary" style="width:100%;justify-content:center" data-share-to="已关注 ">' + parts[0] + '</button>'
+      );
+    }
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+  });
+
+  /* contact form */
+  var cf = document.getElementById('contactForm');
+  if(cf){
+    cf.addEventListener('submit', function(e){
+      e.preventDefault();
+      var inputs = cf.querySelectorAll('input, textarea');
+      var ok = true;
+      inputs.forEach(function(i){ if(i.hasAttribute('required') && !i.value.trim()){ ok = false; } });
+      if(!ok){ showToast('请先填写称呼与联系邮箱'); return; }
+      showToast('提交成功，我们会尽快回复你');
+      cf.reset();
+    });
+  }
+
+  /* count up */
+  var counters = document.querySelectorAll('[data-count]');
+  var done = false;
+  function runCount(){
+    if(done) return;
+    var first = counters[0];
+    if(!first) return;
+    var top = first.getBoundingClientRect().top;
+    if(top < window.innerHeight - 40){
+      done = true;
+      counters.forEach(function(el){
+        var target = parseInt(el.dataset.count, 10);
+        var cur = 0;
+        var step = Math.max(1, Math.ceil(target / 46));
+        var t = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(t); }
+          el.textContent = cur;
+        }, 22);
+      });
+    }
+  }
+  runCount();
+  window.addEventListener('scroll', runCount, {passive:true});
+
+  /* back to top */
+  var top = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ top.classList.add('show'); } else { top.classList.remove('show'); }
+  }, {passive:true});
+  top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* escape closes modal */
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeModal(); } });
+});
+</script>
+</body>
+  </html>
